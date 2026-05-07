@@ -1,0 +1,231 @@
+/* --- Root Variables (Matched for Consistency) --- */
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #f39c12;
+    --accent-hover: #e67e22;
+    --text: #444444;
+    --light-bg: #f4f7f9;
+    --white: #ffffff;
+    --border: #e1e8ed;
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    color: var(--text);
+    margin: 0;
+    background-color: var(--white); /* Brighter for content-heavy pages */
+}
+
+/* --- Navigation --- */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* --- About Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), 
+                url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- Section Layout --- */
+section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent);
+    margin: 15px auto 0;
+}
+
+/* --- Mission Cards --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--light-bg);
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid var(--border);
+}
+
+.card:hover {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* --- Team/Feature List --- */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background: var(--white);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+section ul li strong {
+    color: var(--primary);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+/* --- FAQ Section --- */
+.faq {
+    background: var(--light-bg);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.faq:hover {
+    box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.faq h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+footer {
+    background: #1a252f;
+    color: #ecf0f1;
+    padding: 60px 20px 20px;
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* --- Responsive Styling --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    nav { flex-direction: column; }
+    nav ul { margin-top: 15px; }
+    nav ul li { margin: 0 10px; }
+}
